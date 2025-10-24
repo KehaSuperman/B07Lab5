@@ -17,7 +17,7 @@ public class Rectangle
 
     public Rectangle(Point A, Point B, Point C, Point D) throws Lab5Exception
     {
-        if (!Rectangle.is_Rectangle(A, B, C, D)) throw new Lab5Exception("Given points does not form an rectangle");
+        if (!Rectangle.is_Rectangle(A, B, C, D)) throw new Lab5Exception("Given points do not form an rectangle");
 
         this.A = A;
         this.B = B;
