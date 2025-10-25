@@ -11,8 +11,13 @@ class RectangleTest {
 		Point b = new Point(5,0);
 		Point c = new Point(0,2);
 		Point d = new Point(5,2);
+		try {
 		Rectangle r = new Rectangle(a,b,c,d);
-		AssertEquals(r.perimeter(),14);
+		assertEquals(r.perimeter(),14);
+		}catch(Lab5Exception msg)
+		{
+			assertEquals(msg.message,"Given points do not form an rectangle");
+		}
 	}
 	
 	@Test
@@ -21,8 +26,13 @@ class RectangleTest {
 		Point b = new Point(5,0);
 		Point c = new Point(0,2);
 		Point d = new Point(5,2);
+		try {
 		Rectangle r = new Rectangle(a,b,c,d);
-		AssertEquals(r.area(),10);
+		assertEquals(r.area(),10);
+		}catch(Lab5Exception msg)
+		{
+			assertEquals(msg.message,"Given points do not form an rectangle");
+		}
 	}
 	
 	@Test
@@ -31,8 +41,15 @@ class RectangleTest {
 		Point b = new Point(5,0);
 		Point c = new Point(0,2);
 		Point d = new Point(5,2);
-		Rectangle r = new Rectangle(a,b,c,d);
-		AssertFalse(r.is_square);
+		try
+		{
+			Rectangle r = new Rectangle(a,b,c,d);
+			assertFalse(r.is_square());
+		}catch(Lab5Exception msg)
+		{
+			assertEquals(msg.message,"Given points do not form an rectangle");
+		}
+		
 	}
 	@Test
 	void testIsSquare() {
@@ -40,8 +57,13 @@ class RectangleTest {
 		Point b = new Point(5,0);
 		Point c = new Point(0,5);
 		Point d = new Point(5,5);
+		try {
 		Rectangle r = new Rectangle(a,b,c,d);
-		AssertTrue(r.is_square);
+		assertTrue(r.is_square());
+		}catch(Lab5Exception msg)
+		{
+			assertEquals(msg.message,"Given points do not form an rectangle");
+		}
 	}
 	@Test
 	void testNotRectangle() {
