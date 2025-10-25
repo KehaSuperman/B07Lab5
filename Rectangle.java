@@ -42,7 +42,7 @@ public class Rectangle
                 break;
             case 2:
                 this.width = distance_arr[0];
-                this.length = distance_arr[2];
+                this.length = distance_arr[1];
                 break;
         }        
     }
